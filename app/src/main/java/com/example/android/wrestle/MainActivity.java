@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     //Going to have to make a new method for this
     //All functions that use twoPoints method get modified since this is always true
 
-    
+
     public void twoPoints(View view) {
         TextView scoreView = (TextView) findViewById(R.id.team_red_score);
         Button redNearFall = (Button) findViewById(R.id.red_near_fall);

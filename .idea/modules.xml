@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Wrestle.iml" filepath="$PROJECT_DIR$/Wrestle.iml" />
-      <module fileurl="file://C:\Users\agrant\Android\Wrestle\Wrestle.iml" filepath="C:\Users\agrant\Android\Wrestle\Wrestle.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\agrant\Android\Wrestle\app\app.iml" filepath="C:\Users\agrant\Android\Wrestle\app\app.iml" />
     </modules>
   </component>
 </project>
