@@ -46,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
         scoreView.setText(String.valueOf(pointsRed));
     }
 
+    //Going to have to make a new method for this
+    //All functions that use twoPoints method get modified since this is always true
+
+    
     public void twoPoints(View view) {
         TextView scoreView = (TextView) findViewById(R.id.team_red_score);
         Button redNearFall = (Button) findViewById(R.id.red_near_fall);
@@ -104,8 +108,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void switchRed(View view){
         Button redNearFall = (Button) findViewById(R.id.red_near_fall);
+        Button redPenalty = (Button) findViewById(R.id.redPenalty);
         //int parameter = String.valueOf(redNearFall.getText());
-        if (redNearFall.getText() == getString(R.string.red_neaFall_2_seconds)) redNearFall.setText(getString(R.string.red_nearFall_5_seconds));
-        else if (redNearFall.getText() == getString(R.string.red_nearFall_5_seconds)) redNearFall.setText(getString(R.string.red_neaFall_2_seconds));
+        if ((redNearFall.getText() == getString(R.string.red_neaFall_2_seconds)) && (redPenalty.getText() == getString(R.string.red_penalty_1))) {
+            redNearFall.setText(getString(R.string.red_nearFall_5_seconds));
+            redPenalty.setText(getString(R.string.red_penalty_2));
+        }
+        else if ((redNearFall.getText() == getString(R.string.red_nearFall_5_seconds)) && (redPenalty.getText() == getString(R.string.red_penalty_2))) {
+            redNearFall.setText(getString(R.string.red_neaFall_2_seconds));
+            redPenalty.setText(getString(R.string.red_penalty_1));
+        }
     }
 }
