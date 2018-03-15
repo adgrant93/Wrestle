@@ -5,4 +5,9 @@
     <string name="red_penalty_1">Penalty +1</string>
     <string name="red_penalty_2">Penalty +2</string>
 
+    <string name="blue_neaFall_2_seconds">Near Fall +2</string>
+    <string name="blue_nearFall_5_seconds">Near Fall +3</string>
+    <string name="blue_penalty_1">Penalty +1</string>
+    <string name="blue_penalty_2">Penalty +2</string>
+
 </resources>

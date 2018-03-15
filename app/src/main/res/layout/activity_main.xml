@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id = "@+id/teams_view">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -36,8 +36,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:onClick="twoPoints"
-                android:text="Takedown" />
+                android:onClick="twoPointsRed"
+                android:text="Takedown/Reversal" />
 
             <Button
                 android:layout_width="match_parent"
@@ -50,14 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:onClick="twoPoints"
-                android:text="Reversal" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:onClick="twoPoints"
+                android:onClick="nearFallToggleRed"
                 android:text="@string/red_neaFall_2_seconds"
                 android:id = "@+id/red_near_fall"/>
 
@@ -67,16 +60,24 @@
                 android:layout_margin="8dp"
                 android:id="@+id/redPenalty"
                 android:text="@string/red_penalty_1"
-                android:onClick="onePoint"/>
+                android:onClick="penaltyToggleRed"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Toggle"
                 android:onClick="switchRed"
-                />
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"/>
 
         </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray"/>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -90,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:padding="4dp"
-                android:text="Red Team" />
+                android:text="Blue Team" />
 
             <TextView
                 android:id="@+id/team_blue_score"
@@ -104,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:onClick="twoPointsB"
-                android:text="Takedown" />
+                android:text="Takedown/Reversal" />
 
             <Button
                 android:layout_width="match_parent"
@@ -117,23 +118,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:onClick="twoPointsB"
-                android:text="Reversal" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:onClick="twoPointsB"
-                android:text = "Near Fall"/>
+                android:onClick="nearFallToggleBlue"
+                android:id = "@+id/blue_near_fall"
+                android:text = "@string/blue_neaFall_2_seconds"/>
 
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="Penalty Points"
-                android:onClick="onePointB"/>
+                android:id="@+id/bluePenalty"
+                android:text="@string/blue_penalty_1"
+                android:onClick="penaltyToggleBlue"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Toggle"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:onClick="switchBlue"/>
 
         </LinearLayout>
 
@@ -143,6 +148,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text = "Reset"
-        android:layout_gravity="center_horizontal"
-        android:onClick="reset"/>
-</LinearLayout>
+        android:onClick="reset"
+        android:layout_marginBottom="32dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

@@ -46,11 +46,17 @@ public class MainActivity extends AppCompatActivity {
         scoreView.setText(String.valueOf(pointsRed));
     }
 
+    public void twoPointsRed(View view) {
+        TextView scoreView = (TextView) findViewById(R.id.team_red_score);
+        pointsRed += 2;
+        scoreView.setText(String.valueOf(pointsRed));
+
+    }
     //Going to have to make a new method for this
     //All functions that use twoPoints method get modified since this is always true
 
 
-    public void twoPoints(View view) {
+    public void nearFallToggleRed(View view) {
         TextView scoreView = (TextView) findViewById(R.id.team_red_score);
         Button redNearFall = (Button) findViewById(R.id.red_near_fall);
 
@@ -61,6 +67,48 @@ public class MainActivity extends AppCompatActivity {
         else if (redNearFall.getText() == getString(R.string.red_nearFall_5_seconds)) {
             pointsRed += 3;
             scoreView.setText(String.valueOf(pointsRed));
+        }
+    }
+
+    public void nearFallToggleBlue(View view) {
+        TextView scoreView = (TextView) findViewById(R.id.team_blue_score);
+        Button blueNearFall = (Button) findViewById(R.id.blue_near_fall);
+
+        if (blueNearFall.getText() == getString(R.string.blue_neaFall_2_seconds)) {
+            pointsBlue += 2;
+            scoreView.setText(String.valueOf(pointsBlue));
+        }
+        else if (blueNearFall.getText() == getString(R.string.blue_nearFall_5_seconds)) {
+            pointsBlue += 3;
+            scoreView.setText(String.valueOf(pointsBlue));
+        }
+    }
+
+    public void penaltyToggleRed(View view) {
+        TextView scoreView = (TextView) findViewById(R.id.team_red_score);
+        Button redPenaltyToggle = (Button) findViewById(R.id.redPenalty);
+
+        if (redPenaltyToggle.getText() == getString(R.string.red_penalty_1)) {
+            pointsRed += 1;
+            scoreView.setText(String.valueOf(pointsRed));
+        }
+        else if (redPenaltyToggle.getText() == getString(R.string.red_penalty_2)) {
+            pointsRed += 2;
+            scoreView.setText(String.valueOf(pointsRed));
+        }
+    }
+
+    public void penaltyToggleBlue(View view) {
+        TextView scoreView = (TextView) findViewById(R.id.team_blue_score);
+        Button bluePenaltyToggle = (Button) findViewById(R.id.bluePenalty);
+
+        if (bluePenaltyToggle.getText() == getString(R.string.blue_penalty_1)) {
+            pointsBlue += 1;
+            scoreView.setText(String.valueOf(pointsBlue));
+        }
+        else if (bluePenaltyToggle.getText() == getString(R.string.blue_penalty_2)) {
+            pointsBlue += 2;
+            scoreView.setText(String.valueOf(pointsBlue));
         }
     }
         //pointsRed = pointsRed + 2;
@@ -117,6 +165,20 @@ public class MainActivity extends AppCompatActivity {
         else if ((redNearFall.getText() == getString(R.string.red_nearFall_5_seconds)) && (redPenalty.getText() == getString(R.string.red_penalty_2))) {
             redNearFall.setText(getString(R.string.red_neaFall_2_seconds));
             redPenalty.setText(getString(R.string.red_penalty_1));
+        }
+    }
+
+    public void switchBlue(View view){
+        Button blueNearFall = (Button) findViewById(R.id.blue_near_fall);
+        Button bluePenalty = (Button) findViewById(R.id.bluePenalty);
+        //int parameter = String.valueOf(redNearFall.getText());
+        if ((blueNearFall.getText() == getString(R.string.blue_neaFall_2_seconds)) && (bluePenalty.getText() == getString(R.string.blue_penalty_1))) {
+            blueNearFall.setText(getString(R.string.blue_nearFall_5_seconds));
+            bluePenalty.setText(getString(R.string.blue_penalty_2));
+        }
+        else if ((blueNearFall.getText() == getString(R.string.red_nearFall_5_seconds)) && (bluePenalty.getText() == getString(R.string.red_penalty_2))) {
+            blueNearFall.setText(getString(R.string.red_neaFall_2_seconds));
+            bluePenalty.setText(getString(R.string.red_penalty_1));
         }
     }
 }
