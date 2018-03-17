@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Wrestle!</string>
+    <string name="app_name">Wrastle!</string>
     <string name="red_neaFall_2_seconds">Near Fall +2</string>
     <string name="red_nearFall_5_seconds">Near Fall +3</string>
     <string name="red_penalty_1">Penalty +1</string>
